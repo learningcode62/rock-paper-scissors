@@ -1,5 +1,5 @@
 function getComputerChoice(){
-    let i =  Math.random()
+    let i =  Math.random();
     if (i <= 1/3){
         i = "rock";
     }   else if (i > 2/3){
@@ -9,4 +9,10 @@ function getComputerChoice(){
     }
     return i;
 }
-console.log(getComputerChoice())
+
+function getPlayerChoice(){
+    let i = prompt("Type Rock, Paper or Scissors");
+    i  = i.toLowerCase();
+    return i;
+}
+console.log(getPlayerChoice)
