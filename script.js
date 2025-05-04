@@ -15,11 +15,25 @@ function getPlayerChoice(){
     return i;
 }
 
+function playRound(playerChoice, computerChoice){
+    if(playerChoice ===  computerChoice){
+        console.log(`Draw! ${playerChoice} is even with ${computerChoice}`)
+    } else if(playerChoice === "rock" && computerChoice === "scissors" || playerChoice === "paper" && computerChoice === "rock" || playerChoice === "scissors" && computerChoice === "paper"){
+        console.log(`You win! ${playerChoice} beats ${computerChoice}`)
+        return "win";
+    } else {
+        console.log(`You lose! ${computerChoice} beats  ${playerChoice}`)
+        return "lose"
+    }
+}
+
 let playerScore = 0;
 let computerScore = 0;
+let playerSelection = getPlayerChoice();
+let computerSelection  = getComputerChoice()
 
 
-
+playRound(playerSelection, computerSelection)
 
 // playGame();
 console.log(playerSelection);
