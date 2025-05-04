@@ -29,12 +29,24 @@ function playRound(playerChoice, computerChoice){
 
 let playerScore = 0;
 let computerScore = 0;
-let playerSelection = getPlayerChoice();
-let computerSelection  = getComputerChoice()
 
 
-playRound(playerSelection, computerSelection)
+function playGame(){
 
-// playGame();
-console.log(playerSelection);
-console.log(computerSelection);
+    for(let a = 0; a < 5; a++){
+        let playerSelection = getPlayerChoice();
+        let computerSelection  = getComputerChoice();
+        let i  = playRound(playerSelection, computerSelection);
+        if(i === "win"){playerScore++}
+        else if(i === "lose"){computerScore++}
+    }
+    if(playerScore > computerScore){
+        console.log(`You win ${playerScore} to ${computerScore}`)
+    } else if(playerScore <computerScore){
+        console.log(`You lose ${playerScore} to ${computerScore}`)
+    } else{console.log(`You draw with ${playerScore} points each`)}
+}
+
+
+
+playGame();
